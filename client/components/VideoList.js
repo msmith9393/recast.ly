@@ -1,14 +1,9 @@
-var VideoList = () => (
+var VideoList = (props) => (
+  // map over props.videoData and create a VideoListEntry
   <div className="video-list media">
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
+    {props.videoData.map(video =>
+      <VideoListEntry video={video} />
+    )}
   </div>
 );
 

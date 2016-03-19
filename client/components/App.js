@@ -8,10 +8,9 @@ class App extends React.Component {
     };
   }
 
-  onTitleClick() {
-    console.log('hello');
+  updateCurrentVideo(video) {
     this.setState({
-      currentVideo: exampleVideoData[1]
+      currentVideo: video
     });
   }
   
@@ -23,14 +22,11 @@ class App extends React.Component {
           <VideoPlayer firstVideo={this.state.currentVideo} />
         </div>
         <div className="col-md-5">
-          <VideoList fred={this.onTitleClick.bind(this)} videoData={this.state.videos} />
+          <VideoList listUpdate={this.updateCurrentVideo.bind(this)} videoData={this.state.videos} />
         </div>
       </div>
     );
   }
 } 
-
-
-
 
 ReactDOM.render(<App />, document.getElementById('app')); 

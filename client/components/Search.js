@@ -2,11 +2,18 @@ class Search extends React.Component {
   
   constructor(props) {
     super(props);
+    this.state = {
+      value: ''
+    }
   }
 
   handleSubmit() {
     var search = $('.form-control').val(); //TODO MAKE A BETTER WAY TO GET SEARCH VALUE
-    return this.props.test(search);
+
+    this.setState({
+      value: search
+    });
+    this.props.updateNav(search);
   }
 
   render() {

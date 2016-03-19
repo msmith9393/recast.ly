@@ -2,15 +2,15 @@ class Nav extends React.Component {
   constructor(props) {
     super(props);
   }
-  fred(search) {
-    console.log('inside Navs fred, search is:', search);
-    return this.props.updateNav(search);
-  }
+  // updateNav(search) {
+  //   console.log('in Nav, search is:', search);
+  //   return this.props.updateNav(search);
+  // }
   render() {
     return (
       <nav className="navbar">
         <div className="col-md-6 col-md-offset-3">
-          <Search test={this.fred.bind(this)} />
+          <Search updateNav={this.props.updateNav.bind(this)} />
         </div>
       </nav>
     );

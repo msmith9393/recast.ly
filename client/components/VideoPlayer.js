@@ -5,7 +5,7 @@ class VideoPlayer extends React.Component {
   }
 
   render() {
-    return (
+    return !this.props.video ? <div>Loading....</div> : (
       <div className="video-player">
         <div className="embed-responsive embed-responsive-16by9">
           <iframe className="embed-responsive-item" 

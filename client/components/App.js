@@ -8,11 +8,9 @@ class App extends React.Component {
     };
   }
 
-  // handleClick() {
-  //   this.setState({
-
-  //   });
-  // }
+  handleClick() {
+    console.log('from the app')
+  }
   
   render() {
     return (

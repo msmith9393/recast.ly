@@ -5,7 +5,8 @@ class VideoListEntry extends React.Component {
   }
   
   handleClick() {
-    console.log('hi');
+    // reset current video to video that was clicked
+    return this.props.test(this.props.video);
   }
 
   render() {

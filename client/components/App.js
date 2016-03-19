@@ -8,8 +8,11 @@ class App extends React.Component {
     };
   }
 
-  handleClick() {
-    console.log('from the app')
+  onTitleClick() {
+    console.log('hello');
+    this.setState({
+      currentVideo: exampleVideoData[1]
+    });
   }
   
   render() {
@@ -20,7 +23,7 @@ class App extends React.Component {
           <VideoPlayer firstVideo={this.state.currentVideo} />
         </div>
         <div className="col-md-5">
-          <VideoList videoData={this.state.videos} />
+          <VideoList fred={this.onTitleClick.bind(this)} videoData={this.state.videos} />
         </div>
       </div>
     );
@@ -30,4 +33,4 @@ class App extends React.Component {
 
 
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app')); 

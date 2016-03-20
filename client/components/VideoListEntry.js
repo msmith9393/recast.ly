@@ -6,7 +6,8 @@ class VideoListEntry extends React.Component {
   
   handleClick() {
     // reset current video to video that was clicked
-    return this.props.listEntryUpdate(this.props.video);
+    console.log('In VLE handleClick', this.props.video);
+    this.props.listUpdate(this.props.video);
   }
 
   render() {

@@ -20,13 +20,16 @@ class App extends React.Component {
     var options = {
       key: window.YOUTUBE_API_KEY,
       q: query,
-      max: 7,
-      part: 'snippet'
+      maxResults: 7,
+      part: 'snippet',
+      type: 'video',
+      videoEmbeddable: 'true',
     };
 
     console.log('options:', options);
 
     searchYouTube(options, videos => {
+      console.log('videos in syt', videos);
       this.setState({
         videos: videos,
         currentVideo: videos[1]

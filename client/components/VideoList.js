@@ -4,16 +4,16 @@ class VideoList extends React.Component {
     super(props);
   }
 
-  videoListUpdate(video) {
-    return this.props.listUpdate(video);
-  }
+  // videoListUpdate(video) {
+  //   this.props.listUpdate(video);
+  // }
 
   render() {
     // map over props.videoData and create a VideoListEntry
     return (  
       <div className="video-list media">
         {this.props.videoData.map(video =>
-          <VideoListEntry listEntryUpdate={this.videoListUpdate.bind(this)} video={video} />
+          <VideoListEntry listUpdate={this.props.listUpdate.bind(this)} video={video} />
         )}
       </div>
     );

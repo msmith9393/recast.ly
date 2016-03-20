@@ -11,8 +11,6 @@ var searchYouTube = (options, callback) => {
     url: 'https://www.googleapis.com/youtube/v3/search',
     type: 'GET',
     data: options,
-    // type: 'video',
-    // videoEmbeddable: 'true',
     success: function(videosData) {
       console.log('videosData in ajax success is:', videosData);
       callback.call(this, videosData.items);

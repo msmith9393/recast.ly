@@ -13,13 +13,15 @@ class Search extends React.Component {
     this.setState({
       value: search
     });
-    this.props.updateNav(search);
+    var update = this.props.updateNav;
+    update(search);
   }
+
 
   render() {
     return (
       <div className="search-bar form-inline">
-        <input className="form-control" type="text" />
+        <input onChange={_.debounce(this.handleSubmit.bind(this), 400)} className="form-control" type="text" />
         <button onClick={this.handleSubmit.bind(this)} className="btn hidden-sm-down">
           <span className="glyphicon glyphicon-search"></span>
         </button>
